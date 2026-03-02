@@ -181,7 +181,7 @@
                 <div class="qr-section">
                     <p class="fw-bold mb-2">Payment QR Code</p>
                     <div class="qr-frame">
-                        <img id="qrImg" src="images/1099.jpg.jpeg" alt="Payment QR">
+                        <img id="qrImg" src="images/1095.jpg" alt="Payment QR">
                     </div>
                     <a href="#" class="btn-download" onclick="downloadQR()">Save QR Code & Download</a>
                 </div>
@@ -212,16 +212,16 @@
         const priceText = document.getElementById('priceText');
         const vehicleTypeText = document.getElementById('vehicleTypeText');
 
-        // FULL UPDATED CONFIG FOR YOUR LATEST OPTIONS
+        // Updated with new prices & QR images (smaller vehicle → smaller price)
         const config = {
-            'Colour Sticker':     { img: 'images/1099.jpg.jpeg', price: '₹ 1099.00' },
-            'Two Wheeler':        { img: 'images/1099.jpg.jpeg', price: '₹ 1099.00' },
-            'Three Wheeler':      { img: 'images/1299.jpg.jpeg', price: '₹ 1299.00' },
-            'Electric Vehicle':   { img: 'images/1299.jpg.jpeg', price: '₹ 1299.00' },
-            'Tractor & Trailer':  { img: 'images/1499.jpg.jpeg', price: '₹ 1499.00' },
-            'Four Wheeler':       { img: 'images/1499.jpg.jpeg', price: '₹ 1499.00' },
-            'Heavy Vehicle':      { img: 'images/1499.jpg.jpeg', price: '₹ 1499.00' },
-            'Replacement':        { img: 'images/1299.jpg.jpeg', price: '₹ 1299.00' }
+            'Colour Sticker':     { img: 'images/1095.jpg', price: '₹ 1095.00' },
+            'Two Wheeler':        { img: 'images/1095.jpg', price: '₹ 1095.00' },
+            'Three Wheeler':      { img: 'images/1294.jpg', price: '₹ 1294.00' },
+            'Electric Vehicle':   { img: 'images/1294.jpg', price: '₹ 1294.00' },
+            'Tractor & Trailer':  { img: 'images/1395.jpg', price: '₹ 1395.00' },
+            'Four Wheeler':       { img: 'images/1495.jpg', price: '₹ 1495.00' },
+            'Heavy Vehicle':      { img: 'images/1495.jpg', price: '₹ 1495.00' },
+            'Replacement':        { img: 'images/1295.jpg', price: '₹ 1295.00' }
         };
 
         const settings = config[type] || config['Two Wheeler'];
@@ -233,13 +233,13 @@
             ? 'Replacement / Retain / Transfer' 
             : type;
 
-        // Image load check
+        // Image load check (helps debug if QR not loading)
         qrImg.onload = function () {
             console.log('✅ Image loaded successfully:', settings.img);
         };
         qrImg.onerror = function () {
             console.error('❌ Image FAILED to load:', settings.img);
-            alert('QR image not found: ' + settings.img + '\n\nPlease check your images folder!');
+            alert('QR image not found: ' + settings.img + '\n\nMake sure the file exists in your images folder!');
         };
 
         function downloadQR() {
