@@ -10,15 +10,14 @@
 
   <style>
     :root {
-      --gov-blue: #1a3c6e;
-      --gov-light: #e9eef5;
-      --gov-border: #cbd5e1;
+      --brand: #0d6efd;
+      --soft: #f5f7fb;
     }
 
     body {
       margin: 0;
       padding-top: 80px;
-      background: #f1f5f9;
+      background: var(--soft);
       font-family: system-ui;
     }
 
@@ -27,60 +26,100 @@
       top: 0;
       width: 100%;
       z-index: 1000;
-      background: #ffffff;
-      border-bottom: 2px solid var(--gov-blue);
+      background: rgba(255,255,255,0.95);
+      border-bottom: 1px solid #eee;
     }
 
     .logo-text {
-      font-weight: 800;
+      font-weight: 900;
       font-size: 20px;
-      color: var(--gov-blue);
     }
 
     .trust-badge {
       font-size: 12px;
-      background: #eef2ff;
-      color: var(--gov-blue);
+      background: #e6f4ea;
+      color: #137333;
       padding: 4px 10px;
-      border-radius: 4px;
+      border-radius: 20px;
       font-weight: 600;
     }
 
-    .service-strip {
-      background: white;
-      border: 1px solid var(--gov-border);
+    /* HERO */
+    .hero img {
+      width: 100%;
       border-radius: 10px;
-      padding: 25px;
     }
 
-    .service-tile {
-      border-radius: 8px;
-      padding: 20px;
-      background: var(--gov-light);
-      border: 1px solid var(--gov-border);
-      text-align: center;
+    /* ===== NEW SERVICE CARDS ===== */
+    .service-grid {
+      padding: 25px 0;
     }
 
-    .service-tile h5 {
-      color: var(--gov-blue);
+    .service-card {
+      border-radius: 16px;
+      padding: 22px;
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-blue {
+      background: linear-gradient(135deg,#2f4a9e,#1f3b82);
+      color: white;
+    }
+
+    .card-yellow {
+      background: linear-gradient(135deg,#ffe38a,#ffd24d);
+      color: #111;
+    }
+
+    .service-title {
+      font-size: 16px;
       font-weight: 700;
+      line-height: 1.4;
     }
 
-    .btn {
-      border-radius: 6px;
+    .btn-book {
+      padding: 7px 14px;
+      border-radius: 10px;
       font-weight: 600;
+      text-decoration: none;
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    .btn-primary {
-      background: var(--gov-blue);
-      border: none;
+    .btn-dark-custom {
+      background: #0f172a;
+      color: white;
     }
 
+    .btn-light-custom {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-dark-outline {
+      background: transparent;
+      border: 2px solid #0f172a;
+      color: #0f172a;
+    }
+
+    /* OTHER BOXES */
     .section-box {
       background: white;
-      border: 1px solid var(--gov-border);
       border-radius: 10px;
       padding: 20px;
+      border: 1px solid #ddd;
     }
 
     .footer {
@@ -89,7 +128,7 @@
       margin-top: 40px;
     }
 
-    a { text-decoration: none; color: inherit; }
+    a { text-decoration: none; }
   </style>
 </head>
 
@@ -99,86 +138,80 @@
 <nav class="navbar nav-glass">
   <div class="container d-flex justify-content-between align-items-center">
     <div>
-      <div class="logo-text">Transport Services Portal</div>
+      <div class="logo-text">Transport Services</div>
       <div class="trust-badge">Private Assistance Service</div>
     </div>
-    <a href="enquiry.html" class="btn btn-primary">Apply Online</a>
+    <a href="enquiry.html" class="btn btn-primary">Apply Now</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="container mt-3">
-  <img src="images/advertisement_Test.jpg" style="width:100%; border-radius:6px;">
+<section class="container hero mt-3">
+  <img src="images/advertisement_Test.jpg">
 </section>
 
-<!-- SERVICES -->
-<div class="container mt-4">
-  <div class="service-strip">
-    <div class="row g-3">
+<!-- ===== NEW SERVICE BOXES (YOUR IMAGE STYLE) ===== -->
+<div class="container service-grid">
+  <div class="row g-4">
 
-      <div class="col-md-4"><div class="service-tile"><h5>Two Wheeler Service</h5><a href="enquiry.html" class="btn btn-primary mt-2">Apply</a></div></div>
-      <div class="col-md-4"><div class="service-tile"><h5>RC Transfer / Replacement</h5><a href="enquiry.html" class="btn btn-primary mt-2">Apply</a></div></div>
-      <div class="col-md-4"><div class="service-tile"><h5>Four Wheeler Service</h5><a href="enquiry.html" class="btn btn-primary mt-2">Apply</a></div></div>
-      <div class="col-md-4"><div class="service-tile"><h5>Three Wheeler Service</h5><a href="enquiry.html" class="btn btn-primary mt-2">Apply</a></div></div>
-      <div class="col-md-4"><div class="service-tile"><h5>Electric Vehicle Service</h5><a href="enquiry.html" class="btn btn-primary mt-2">Apply</a></div></div>
-      <div class="col-md-4"><div class="service-tile"><h5>Heavy Vehicle Service</h5><a href="enquiry.html" class="btn btn-primary mt-2">Apply</a></div></div>
-
+    <div class="col-md-6">
+      <div class="service-card card-blue">
+        <div class="service-title">Replacement / Retain / Transfer</div>
+        <a href="enquiry.html" class="btn-book btn-light-custom">Book →</a>
+      </div>
     </div>
+
+    <div class="col-md-6">
+      <div class="service-card card-yellow">
+        <div class="service-title">High Security Registration Plate For Electric Vehicle</div>
+        <a href="enquiry.html" class="btn-book btn-dark-custom">Book →</a>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="service-card card-yellow">
+        <div class="service-title">Only Colour Sticker</div>
+        <a href="enquiry.html" class="btn-book btn-dark-custom">Book →</a>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="service-card card-blue">
+        <div class="service-title">High Security Registration Plate For Tractor & Trailer</div>
+        <a href="enquiry.html" class="btn-book btn-light-custom">Book →</a>
+      </div>
+    </div>
+
   </div>
 </div>
 
 <!-- PROCESS -->
-<section class="container mt-5">
+<section class="container mt-4">
   <div class="section-box">
     <h4>Service Process</h4>
     <ol>
-      <li>Applicant fills online application form with required details.</li>
-      <li>Our support team verifies the submitted information.</li>
-      <li>Application is processed through proper channel.</li>
-      <li>Status update is shared with applicant.</li>
-      <li>Final document/service is delivered.</li>
+      <li>Fill online application form with correct details</li>
+      <li>Document verification by support team</li>
+      <li>Processing through system workflow</li>
+      <li>Status update provided to applicant</li>
+      <li>Final service delivery completed</li>
     </ol>
   </div>
 </section>
 
-<!-- DOCUMENTS -->
-<section class="container mt-4">
-  <div class="section-box">
-    <h4>Required Documents</h4>
-    <ul>
-      <li>Valid ID Proof (Aadhaar Card / PAN Card)</li>
-      <li>Vehicle Registration Details</li>
-      <li>Address Proof</li>
-      <li>Passport Size Photograph</li>
-    </ul>
-  </div>
-</section>
-
 <!-- DELIVERY -->
-<section class="container mt-4">
+<section class="container mt-3">
   <div class="section-box">
-    <h4>Delivery & Processing</h4>
-    <p>
-      After successful verification and processing, the service output is delivered digitally via email or WhatsApp.
-      In some cases, physical delivery may be arranged depending on service type.
-    </p>
+    <h4>Delivery Information</h4>
+    <p>Service updates and final output are delivered via WhatsApp or Email.</p>
     <p><b>Processing Time:</b> 24–72 Working Hours</p>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="container mt-4">
-  <div class="section-box">
-    <h4>Important Information</h4>
-    <p>This platform provides assistance in completing transport-related services in a simplified manner.</p>
-    <p>Applicants may also apply directly through official government portals if preferred.</p>
-  </div>
-</section>
-
 <!-- DISCLAIMER -->
-<section class="container mt-4">
+<section class="container mt-3">
   <div class="section-box" style="background:#fff3cd;">
-    <b>Disclaimer:</b> This is a private service portal and not affiliated with any government authority.
+    <b>Disclaimer:</b> This is a private service provider. We are not affiliated with any government authority.
   </div>
 </section>
 
