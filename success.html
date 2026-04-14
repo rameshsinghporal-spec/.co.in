@@ -26,7 +26,8 @@
     <p><b>Order ID:</b> <span id="orderId"></span></p>
     <p><b>Service:</b> <span id="serviceType"></span></p>
 
-    <p><b>Amount Paid:</b> ₹898</p>
+    <p><b>Amount Paid:</b> <span id="amount" style="color:green;font-weight:bold;"></span></p>
+
     <p><b>Payment Time:</b> <span id="time"></span></p>
 
     <p style="color:green;">
@@ -39,15 +40,24 @@
 </div>
 
 <script>
-  // random order id
-  document.getElementById("orderId").innerText = "HSRP-" + Math.floor(Math.random()*100000);
+// order id
+document.getElementById("orderId").innerText =
+"HSRP-" + Math.floor(Math.random()*100000);
 
-  // get service type from URL
-  const params = new URLSearchParams(window.location.search);
-  document.getElementById("serviceType").innerText = params.get("type") || "HSRP Service";
+// URL params
+const params = new URLSearchParams(window.location.search);
 
-  // current time
-  document.getElementById("time").innerText = new Date().toLocaleString();
+// service type
+document.getElementById("serviceType").innerText =
+params.get("type") || "HSRP Service";
+
+// amount (🔥 FIXED)
+document.getElementById("amount").innerText =
+params.get("amount") || "₹0";
+
+// time
+document.getElementById("time").innerText =
+new Date().toLocaleString();
 </script>
 
 </body>
