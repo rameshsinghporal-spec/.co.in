@@ -53,17 +53,22 @@
       padding: 25px;
     }
 
+    /* ===== ONLY SIZE INCREASED ===== */
     .service-tile {
       border-radius: 8px;
-      padding: 20px;
+      padding: 30px; /* increased */
+      min-height: 190px; /* increased */
       text-align: center;
       border: 1px solid var(--gov-border);
       color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       transition: 0.3s ease;
     }
 
     .service-tile:hover {
-      transform: translateY(-4px);
+      transform: translateY(-5px);
     }
 
     .blue {
@@ -77,6 +82,7 @@
 
     .service-tile h5 {
       font-weight: 700;
+      font-size: 17px;
     }
 
     .btn {
@@ -176,10 +182,8 @@
     <h4>Delivery & Processing</h4>
     <p>
       After successful verification and processing, the service output is delivered digitally via email or WhatsApp.
-      In some cases, physical delivery may be arranged depending on service type.
     </p>
 
-    <!-- NEW ADDED LINE -->
     <p style="color:#1a3c6e;font-weight:600;">
       Standard Delivery Timeline: 7–10 Working Days (depending on service category and verification completion).
     </p>
