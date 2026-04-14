@@ -26,7 +26,6 @@ body {
   box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* ✅ QR FIX */
 .qr-frame {
   display:flex;
   justify-content:center;
@@ -40,11 +39,8 @@ body {
   border-radius:10px;
 }
 
-/* Mobile spacing */
 @media (max-width:576px){
-  .card-payment {
-    padding:15px;
-  }
+  .card-payment { padding:15px; }
 }
 
 .btn-submit {
@@ -125,7 +121,13 @@ alert("Please enter UTR ID and upload screenshot");
 return;
 }
 
-window.location.href = "success.html?type=" + encodeURIComponent(type);
+// 🔥 FIX: amount bhi pass hoga
+const amount = document.getElementById('priceText').innerText;
+
+window.location.href = "success.html?type="
++ encodeURIComponent(type)
++ "&amount=" + encodeURIComponent(amount);
+
 });
 </script>
 
