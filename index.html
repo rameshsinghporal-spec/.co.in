@@ -28,6 +28,7 @@
       width: 100%;
       z-index: 1000;
       background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid #eee;
     }
 
@@ -45,13 +46,15 @@
       font-weight: 600;
     }
 
+    a { text-decoration: none; color: inherit; }
+
     /* HERO */
-    body img {
+    img {
       width: 100%;
       border-radius: 10px;
     }
 
-    /* ===== UPDATED SERVICE STRIP ===== */
+    /* ===== ONLY UPDATED SERVICE BOXES ===== */
     .service-strip {
       background: linear-gradient(135deg, #0d6efd, #0aa2c0);
       border-radius: 20px;
@@ -73,13 +76,11 @@
       transform: translateY(-5px);
     }
 
-    /* BLUE CARD */
     .light {
       background: linear-gradient(135deg, #2f4a9e, #1f3b82);
       color: white;
     }
 
-    /* YELLOW CARD */
     .dark {
       background: linear-gradient(135deg, #ffe38a, #ffd24d);
       color: #111;
@@ -94,31 +95,18 @@
       font-weight: 600;
     }
 
-    .btn-dark {
-      background: #0f172a;
-      border: none;
-    }
-
-    .btn-light {
-      background: transparent;
-      border: 2px solid #fff;
-      color: #fff;
-    }
-
     .footer {
       background: #0b1220;
       color: white;
       border-radius: 25px 25px 0 0;
       margin-top: 40px;
     }
-
-    a { text-decoration: none; color: inherit; }
   </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- HEADER (UNCHANGED) -->
 <nav class="navbar nav-glass">
   <div class="container d-flex justify-content-between align-items-center">
 
@@ -132,45 +120,80 @@
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- HERO (UNCHANGED) -->
 <section class="container mt-3">
   <img src="images/advertisement_Test.jpg">
 </section>
 
-<!-- SERVICES -->
+<!-- SERVICES (ONLY UPGRADED BOXES) -->
 <div class="container mt-4">
   <div class="service-strip">
     <div class="row g-3">
 
-      <div class="col-md-4"><div class="service-tile light"><h5>Two Wheeler</h5><a href="enquiry.html" class="btn btn-light">Book Now</a></div></div>
-      <div class="col-md-4"><div class="service-tile dark"><h5>Replacement / Transfer</h5><a href="enquiry.html" class="btn btn-dark">Book Now</a></div></div>
-      <div class="col-md-4"><div class="service-tile light"><h5>Four Wheeler</h5><a href="enquiry.html" class="btn btn-light">Book Now</a></div></div>
-      <div class="col-md-4"><div class="service-tile dark"><h5>Three Wheeler</h5><a href="enquiry.html" class="btn btn-dark">Book Now</a></div></div>
-      <div class="col-md-4"><div class="service-tile light"><h5>Electric Vehicle</h5><a href="enquiry.html" class="btn btn-light">Book Now</a></div></div>
-      <div class="col-md-4"><div class="service-tile dark"><h5>Heavy Wheeler</h5><a href="enquiry.html" class="btn btn-dark">Book Now</a></div></div>
+      <div class="col-md-4">
+        <div class="service-tile light">
+          <h5>Two Wheeler</h5>
+          <a href="enquiry.html" class="btn btn-light">Book Now</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="service-tile dark">
+          <h5>Replacement / Transfer</h5>
+          <a href="enquiry.html" class="btn btn-dark">Book Now</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="service-tile light">
+          <h5>Four Wheeler</h5>
+          <a href="enquiry.html" class="btn btn-light">Book Now</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="service-tile dark">
+          <h5>Three Wheeler</h5>
+          <a href="enquiry.html" class="btn btn-dark">Book Now</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="service-tile light">
+          <h5>Electric Vehicle</h5>
+          <a href="enquiry.html" class="btn btn-light">Book Now</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="service-tile dark">
+          <h5>Heavy Wheeler</h5>
+          <a href="enquiry.html" class="btn btn-dark">Book Now</a>
+        </div>
+      </div>
 
     </div>
   </div>
 </div>
 
-<!-- HOW IT WORKS -->
-<section class="container mt-5 text-center">
-  <h3>How It Works</h3>
-  <div class="row mt-3">
+<!-- HOW IT WORKS (UNCHANGED) -->
+<section class="container mt-5">
+  <h3 class="text-center">How It Works</h3>
+  <div class="row text-center mt-3">
     <div class="col-md-4"><div class="p-3 bg-white rounded">Fill Details</div></div>
     <div class="col-md-4"><div class="p-3 bg-white rounded">Processing</div></div>
     <div class="col-md-4"><div class="p-3 bg-white rounded">Delivery</div></div>
   </div>
 </section>
 
-<!-- DISCLAIMER -->
+<!-- DISCLAIMER (UNCHANGED) -->
 <section class="container mt-4">
   <div class="p-3 bg-warning rounded">
     <b>Disclaimer:</b> This is a private service provider and not connected with any government authority.
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER (UNCHANGED) -->
 <footer class="footer text-center p-4">
   <h5>Transport Services</h5>
   <p>Email: contact@transportservice.com | Phone: +91 8961756676</p>
