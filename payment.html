@@ -4,14 +4,58 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Payment - Transport Service</title>
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
 <style>
-body { background:#f5f7fb; font-family:system-ui; padding:40px 0;}
-.payment-container { max-width:600px; margin:auto;}
-.card-payment { background:#fff; border-radius:20px; padding:25px; box-shadow:0 10px 30px rgba(0,0,0,0.08);}
-.qr-frame img { width:220px; }
-.btn-submit { background:#198754; color:#fff; font-weight:700; padding:12px; width:100%; border:none; border-radius:10px;}
+body {
+  background:#f5f7fb;
+  font-family:system-ui;
+  padding:20px;
+}
+
+.payment-container {
+  max-width:500px;
+  margin:auto;
+}
+
+.card-payment {
+  background:#fff;
+  border-radius:20px;
+  padding:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ✅ QR FIX */
+.qr-frame {
+  display:flex;
+  justify-content:center;
+}
+
+.qr-frame img {
+  width:100%;
+  max-width:220px;
+  height:auto;
+  object-fit:contain;
+  border-radius:10px;
+}
+
+/* Mobile spacing */
+@media (max-width:576px){
+  .card-payment {
+    padding:15px;
+  }
+}
+
+.btn-submit {
+  background:#198754;
+  color:#fff;
+  font-weight:700;
+  padding:12px;
+  width:100%;
+  border:none;
+  border-radius:10px;
+}
 </style>
 </head>
 
@@ -19,20 +63,15 @@ body { background:#f5f7fb; font-family:system-ui; padding:40px 0;}
 
 <div class="container payment-container">
 
-<h3 class="text-center mb-4">Payment</h3>
+<h4 class="text-center mb-3">Payment</h4>
 
 <div class="card-payment">
 
-<div class="mb-3">
-<b>Vehicle Type:</b> <span id="vehicleTypeText"></span>
-</div>
+<p><b>Vehicle Type:</b> <span id="vehicleTypeText"></span></p>
+<p><b>Total Amount:</b> <span id="priceText"></span></p>
 
-<div class="mb-3">
-<b>Total Amount:</b> <span id="priceText"></span>
-</div>
-
-<div class="text-center mb-4">
-<img id="qrImg" src="images/1099.jpeg">
+<div class="qr-frame mb-3">
+  <img id="qrImg" src="images/1099.jpeg">
 </div>
 
 <form id="paymentForm">
@@ -43,7 +82,7 @@ body { background:#f5f7fb; font-family:system-ui; padding:40px 0;}
 </div>
 
 <div class="mb-3">
-<label>Upload Payment Screenshot*</label>
+<label>Upload Screenshot*</label>
 <input type="file" id="file" class="form-control" accept="image/*" required>
 </div>
 
@@ -55,11 +94,9 @@ body { background:#f5f7fb; font-family:system-ui; padding:40px 0;}
 </div>
 
 <script>
-// GET TYPE FROM URL
 const params = new URLSearchParams(window.location.search);
 const type = params.get('type') || 'Two Wheeler';
 
-// CONFIG
 const config = {
 'Colour Sticker': { img:'images/1199.png', price:'₹1199' },
 'Two Wheeler': { img:'images/1099.png', price:'₹1099' },
@@ -73,27 +110,22 @@ const config = {
 
 const settings = config[type] || config['Two Wheeler'];
 
-// SET DATA
 document.getElementById('qrImg').src = settings.img;
 document.getElementById('priceText').innerText = settings.price;
 document.getElementById('vehicleTypeText').innerText = type;
 
-// FORM SUBMIT
 document.getElementById("paymentForm").addEventListener("submit", function(e){
 e.preventDefault();
 
 const utr = document.getElementById("utr").value.trim();
 const file = document.getElementById("file").files.length;
 
-// VALIDATION
 if(utr === "" || file === 0){
 alert("Please enter UTR ID and upload screenshot");
 return;
 }
 
-// SUCCESS REDIRECT
 window.location.href = "success.html?type=" + encodeURIComponent(type);
-
 });
 </script>
 
