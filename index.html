@@ -10,15 +10,15 @@
 
   <style>
     :root {
-      --brand: #0d6efd;
-      --brand2: #0aa2c0;
-      --soft: #f5f7fb;
+      --gov-blue: #1a3c6e;
+      --gov-light: #e9eef5;
+      --gov-border: #cbd5e1;
     }
 
     body {
       margin: 0;
       padding-top: 80px;
-      background: var(--soft);
+      background: #f1f5f9;
       font-family: system-ui;
     }
 
@@ -27,62 +27,52 @@
       top: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #eee;
+      background: #ffffff;
+      border-bottom: 2px solid var(--gov-blue);
     }
 
     .logo-text {
-      font-weight: 900;
+      font-weight: 800;
       font-size: 20px;
+      color: var(--gov-blue);
     }
 
     .trust-badge {
       font-size: 12px;
-      background: #e6f4ea;
-      color: #137333;
+      background: #eef2ff;
+      color: var(--gov-blue);
       padding: 4px 10px;
-      border-radius: 20px;
+      border-radius: 4px;
       font-weight: 600;
     }
 
-    a { text-decoration: none; color: inherit; }
-
-    /* HERO */
-    img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    /* ===== ONLY UPDATED SERVICE BOXES ===== */
     .service-strip {
-      background: linear-gradient(135deg, #0d6efd, #0aa2c0);
-      border-radius: 20px;
+      background: white;
+      border: 1px solid var(--gov-border);
+      border-radius: 10px;
       padding: 25px;
     }
 
+    /* ===== UPDATED BOX COLORS ===== */
     .service-tile {
-      border-radius: 16px;
-      padding: 22px;
-      min-height: 140px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.10);
-      transition: 0.25s ease;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid var(--gov-border);
+      color: white;
+      transition: 0.3s ease;
     }
 
     .service-tile:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
     }
 
-    .light {
-      background: linear-gradient(135deg, #2f4a9e, #1f3b82);
-      color: white;
+    .blue {
+      background: linear-gradient(135deg, #1a3c6e, #2f4a9e);
     }
 
-    .dark {
-      background: linear-gradient(135deg, #ffe38a, #ffd24d);
+    .yellow {
+      background: linear-gradient(135deg, #ffe08a, #ffd24d);
       color: #111;
     }
 
@@ -91,109 +81,126 @@
     }
 
     .btn {
-      border-radius: 10px;
+      border-radius: 6px;
       font-weight: 600;
+    }
+
+    .btn-primary {
+      background: var(--gov-blue);
+      border: none;
+    }
+
+    .section-box {
+      background: white;
+      border: 1px solid var(--gov-border);
+      border-radius: 10px;
+      padding: 20px;
     }
 
     .footer {
       background: #0b1220;
       color: white;
-      border-radius: 25px 25px 0 0;
       margin-top: 40px;
     }
+
+    a { text-decoration: none; color: inherit; }
   </style>
 </head>
 
 <body>
 
-<!-- HEADER (UNCHANGED) -->
+<!-- HEADER -->
 <nav class="navbar nav-glass">
   <div class="container d-flex justify-content-between align-items-center">
-
     <div>
-      <div class="logo-text">Transport Services</div>
+      <div class="logo-text">Transport Services Portal</div>
       <div class="trust-badge">Private Assistance Service</div>
     </div>
-
-    <a href="enquiry.html" class="btn btn-primary">Apply Now</a>
-
+    <a href="enquiry.html" class="btn btn-primary">Apply Online</a>
   </div>
 </nav>
 
-<!-- HERO (UNCHANGED) -->
+<!-- HERO -->
 <section class="container mt-3">
-  <img src="images/advertisement_Test.jpg">
+  <img src="images/advertisement_Test.jpg" style="width:100%; border-radius:6px;">
 </section>
 
-<!-- SERVICES (ONLY UPGRADED BOXES) -->
+<!-- SERVICES (BLUE + YELLOW UPDATED) -->
 <div class="container mt-4">
   <div class="service-strip">
     <div class="row g-3">
 
-      <div class="col-md-4">
-        <div class="service-tile light">
-          <h5>Two Wheeler</h5>
-          <a href="enquiry.html" class="btn btn-light">Book Now</a>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="service-tile dark">
-          <h5>Replacement / Transfer</h5>
-          <a href="enquiry.html" class="btn btn-dark">Book Now</a>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="service-tile light">
-          <h5>Four Wheeler</h5>
-          <a href="enquiry.html" class="btn btn-light">Book Now</a>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="service-tile dark">
-          <h5>Three Wheeler</h5>
-          <a href="enquiry.html" class="btn btn-dark">Book Now</a>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="service-tile light">
-          <h5>Electric Vehicle</h5>
-          <a href="enquiry.html" class="btn btn-light">Book Now</a>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="service-tile dark">
-          <h5>Heavy Wheeler</h5>
-          <a href="enquiry.html" class="btn btn-dark">Book Now</a>
-        </div>
-      </div>
+      <div class="col-md-4"><div class="service-tile blue"><h5>Two Wheeler Service</h5><a href="enquiry.html" class="btn btn-primary mt-2">Apply</a></div></div>
+      <div class="col-md-4"><div class="service-tile yellow"><h5>RC Transfer / Replacement</h5><a href="enquiry.html" class="btn btn-dark mt-2">Apply</a></div></div>
+      <div class="col-md-4"><div class="service-tile blue"><h5>Four Wheeler Service</h5><a href="enquiry.html" class="btn btn-primary mt-2">Apply</a></div></div>
+      <div class="col-md-4"><div class="service-tile yellow"><h5>Three Wheeler Service</h5><a href="enquiry.html" class="btn btn-dark mt-2">Apply</a></div></div>
+      <div class="col-md-4"><div class="service-tile blue"><h5>Electric Vehicle Service</h5><a href="enquiry.html" class="btn btn-primary mt-2">Apply</a></div></div>
+      <div class="col-md-4"><div class="service-tile yellow"><h5>Heavy Vehicle Service</h5><a href="enquiry.html" class="btn btn-dark mt-2">Apply</a></div></div>
 
     </div>
   </div>
 </div>
 
-<!-- HOW IT WORKS (UNCHANGED) -->
+<!-- PROCESS -->
 <section class="container mt-5">
-  <h3 class="text-center">How It Works</h3>
-  <div class="row text-center mt-3">
-    <div class="col-md-4"><div class="p-3 bg-white rounded">Fill Details</div></div>
-    <div class="col-md-4"><div class="p-3 bg-white rounded">Processing</div></div>
-    <div class="col-md-4"><div class="p-3 bg-white rounded">Delivery</div></div>
+  <div class="section-box">
+    <h4>Service Process</h4>
+    <ol>
+      <li>Applicant fills online application form with required details.</li>
+      <li>Our support team verifies the submitted information.</li>
+      <li>Application is processed through proper channel.</li>
+      <li>Status update is shared with applicant.</li>
+      <li>Final document/service is delivered.</li>
+    </ol>
   </div>
 </section>
 
-<!-- DISCLAIMER (UNCHANGED) -->
+<!-- NEW SECTION (REPLACED DOCUMENTS) -->
 <section class="container mt-4">
-  <div class="p-3 bg-warning rounded">
-    <b>Disclaimer:</b> This is a private service provider and not connected with any government authority.
+  <div class="section-box">
+    <h4>Our Commitment</h4>
+    <p>
+      We are committed to providing transparent, reliable and timely assistance for all transport-related services.
+      Every application is handled with proper verification and customer support.
+    </p>
+    <ul>
+      <li>✔ Transparent Processing</li>
+      <li>✔ Fast Support Assistance</li>
+      <li>✔ Secure Handling of Data</li>
+      <li>✔ Timely Updates to Customers</li>
+    </ul>
   </div>
 </section>
 
-<!-- FOOTER (UNCHANGED) -->
+<!-- DELIVERY -->
+<section class="container mt-4">
+  <div class="section-box">
+    <h4>Delivery & Processing</h4>
+    <p>
+      After successful verification and processing, the service output is delivered digitally via email or WhatsApp.
+      In some cases, physical delivery may be arranged depending on service type.
+    </p>
+    <p><b>Processing Time:</b> 24–72 Working Hours</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="container mt-4">
+  <div class="section-box">
+    <h4>Important Information</h4>
+    <p>This platform provides assistance in completing transport-related services in a simplified manner.</p>
+    <p>Applicants may also apply directly through official government portals if preferred.</p>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section class="container mt-4">
+  <div class="section-box" style="background:#fff3cd;">
+    <b>Disclaimer:</b> This is a private service portal and not affiliated with any government authority.
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer class="footer text-center p-4">
   <h5>Transport Services</h5>
   <p>Email: contact@transportservice.com | Phone: +91 8961756676</p>
