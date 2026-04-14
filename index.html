@@ -11,6 +11,7 @@
   <style>
     :root {
       --brand: #0d6efd;
+      --brand2: #0aa2c0;
       --soft: #f5f7fb;
     }
 
@@ -26,7 +27,7 @@
       top: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(255,255,255,0.95);
+      background: rgba(255, 255, 255, 0.95);
       border-bottom: 1px solid #eee;
     }
 
@@ -45,90 +46,73 @@
     }
 
     /* HERO */
-    .hero img {
+    body img {
       width: 100%;
       border-radius: 10px;
     }
 
-    /* ===== NEW SERVICE CARDS ===== */
-    .service-grid {
-      padding: 25px 0;
+    /* ===== UPDATED SERVICE STRIP ===== */
+    .service-strip {
+      background: linear-gradient(135deg, #0d6efd, #0aa2c0);
+      border-radius: 20px;
+      padding: 25px;
     }
 
-    .service-card {
+    .service-tile {
       border-radius: 16px;
       padding: 22px;
-      min-height: 160px;
+      min-height: 140px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.10);
       transition: 0.25s ease;
     }
 
-    .service-card:hover {
+    .service-tile:hover {
       transform: translateY(-5px);
     }
 
-    .card-blue {
-      background: linear-gradient(135deg,#2f4a9e,#1f3b82);
+    /* BLUE CARD */
+    .light {
+      background: linear-gradient(135deg, #2f4a9e, #1f3b82);
       color: white;
     }
 
-    .card-yellow {
-      background: linear-gradient(135deg,#ffe38a,#ffd24d);
+    /* YELLOW CARD */
+    .dark {
+      background: linear-gradient(135deg, #ffe38a, #ffd24d);
       color: #111;
     }
 
-    .service-title {
-      font-size: 16px;
+    .service-tile h5 {
       font-weight: 700;
-      line-height: 1.4;
     }
 
-    .btn-book {
-      padding: 7px 14px;
+    .btn {
       border-radius: 10px;
       font-weight: 600;
-      text-decoration: none;
-      width: fit-content;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
     }
 
-    .btn-dark-custom {
+    .btn-dark {
       background: #0f172a;
-      color: white;
+      border: none;
     }
 
-    .btn-light-custom {
+    .btn-light {
       background: transparent;
-      border: 2px solid white;
-      color: white;
-    }
-
-    .btn-dark-outline {
-      background: transparent;
-      border: 2px solid #0f172a;
-      color: #0f172a;
-    }
-
-    /* OTHER BOXES */
-    .section-box {
-      background: white;
-      border-radius: 10px;
-      padding: 20px;
-      border: 1px solid #ddd;
+      border: 2px solid #fff;
+      color: #fff;
     }
 
     .footer {
       background: #0b1220;
       color: white;
+      border-radius: 25px 25px 0 0;
       margin-top: 40px;
     }
 
-    a { text-decoration: none; }
+    a { text-decoration: none; color: inherit; }
   </style>
 </head>
 
@@ -137,81 +121,52 @@
 <!-- HEADER -->
 <nav class="navbar nav-glass">
   <div class="container d-flex justify-content-between align-items-center">
+
     <div>
       <div class="logo-text">Transport Services</div>
       <div class="trust-badge">Private Assistance Service</div>
     </div>
+
     <a href="enquiry.html" class="btn btn-primary">Apply Now</a>
+
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="container hero mt-3">
+<section class="container mt-3">
   <img src="images/advertisement_Test.jpg">
 </section>
 
-<!-- ===== NEW SERVICE BOXES (YOUR IMAGE STYLE) ===== -->
-<div class="container service-grid">
-  <div class="row g-4">
+<!-- SERVICES -->
+<div class="container mt-4">
+  <div class="service-strip">
+    <div class="row g-3">
 
-    <div class="col-md-6">
-      <div class="service-card card-blue">
-        <div class="service-title">Replacement / Retain / Transfer</div>
-        <a href="enquiry.html" class="btn-book btn-light-custom">Book →</a>
-      </div>
+      <div class="col-md-4"><div class="service-tile light"><h5>Two Wheeler</h5><a href="enquiry.html" class="btn btn-light">Book Now</a></div></div>
+      <div class="col-md-4"><div class="service-tile dark"><h5>Replacement / Transfer</h5><a href="enquiry.html" class="btn btn-dark">Book Now</a></div></div>
+      <div class="col-md-4"><div class="service-tile light"><h5>Four Wheeler</h5><a href="enquiry.html" class="btn btn-light">Book Now</a></div></div>
+      <div class="col-md-4"><div class="service-tile dark"><h5>Three Wheeler</h5><a href="enquiry.html" class="btn btn-dark">Book Now</a></div></div>
+      <div class="col-md-4"><div class="service-tile light"><h5>Electric Vehicle</h5><a href="enquiry.html" class="btn btn-light">Book Now</a></div></div>
+      <div class="col-md-4"><div class="service-tile dark"><h5>Heavy Wheeler</h5><a href="enquiry.html" class="btn btn-dark">Book Now</a></div></div>
+
     </div>
-
-    <div class="col-md-6">
-      <div class="service-card card-yellow">
-        <div class="service-title">High Security Registration Plate For Electric Vehicle</div>
-        <a href="enquiry.html" class="btn-book btn-dark-custom">Book →</a>
-      </div>
-    </div>
-
-    <div class="col-md-6">
-      <div class="service-card card-yellow">
-        <div class="service-title">Only Colour Sticker</div>
-        <a href="enquiry.html" class="btn-book btn-dark-custom">Book →</a>
-      </div>
-    </div>
-
-    <div class="col-md-6">
-      <div class="service-card card-blue">
-        <div class="service-title">High Security Registration Plate For Tractor & Trailer</div>
-        <a href="enquiry.html" class="btn-book btn-light-custom">Book →</a>
-      </div>
-    </div>
-
   </div>
 </div>
 
-<!-- PROCESS -->
-<section class="container mt-4">
-  <div class="section-box">
-    <h4>Service Process</h4>
-    <ol>
-      <li>Fill online application form with correct details</li>
-      <li>Document verification by support team</li>
-      <li>Processing through system workflow</li>
-      <li>Status update provided to applicant</li>
-      <li>Final service delivery completed</li>
-    </ol>
-  </div>
-</section>
-
-<!-- DELIVERY -->
-<section class="container mt-3">
-  <div class="section-box">
-    <h4>Delivery Information</h4>
-    <p>Service updates and final output are delivered via WhatsApp or Email.</p>
-    <p><b>Processing Time:</b> 24–72 Working Hours</p>
+<!-- HOW IT WORKS -->
+<section class="container mt-5 text-center">
+  <h3>How It Works</h3>
+  <div class="row mt-3">
+    <div class="col-md-4"><div class="p-3 bg-white rounded">Fill Details</div></div>
+    <div class="col-md-4"><div class="p-3 bg-white rounded">Processing</div></div>
+    <div class="col-md-4"><div class="p-3 bg-white rounded">Delivery</div></div>
   </div>
 </section>
 
 <!-- DISCLAIMER -->
-<section class="container mt-3">
-  <div class="section-box" style="background:#fff3cd;">
-    <b>Disclaimer:</b> This is a private service provider. We are not affiliated with any government authority.
+<section class="container mt-4">
+  <div class="p-3 bg-warning rounded">
+    <b>Disclaimer:</b> This is a private service provider and not connected with any government authority.
   </div>
 </section>
 
